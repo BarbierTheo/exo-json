@@ -54,20 +54,23 @@ document.getElementById("yearformed").innerHTML = `${data.formed}`;
 
 for (let i = 0; i < data.members.length; i++) {
 
-document.querySelector('.cardsection').innerHTML +=
 
-const heroname = data.members[i].name
-console.log(heroname)
-`<div class="card p-4 col-lg-3 col-md-6 col-12 m-4 shadow ">
-<p class="text-center fw-bold typo">${data.members.name}</p>
+document.querySelector('.cardsection').innerHTML +=
+`<div class="card p-4 col-lg-3 col-10 m-4 shadow ">
+<p class="text-center fw-bold typo">${data.members[i].name}</p>
 <ul>
-    <li><span class="fw-bold">Secret identity :</span> name</li>
-    <li><span class="fw-bold">Age :</span> age</li>
+    <li><span class="fw-bold">Secret identity :</span> ${data.members[i].secretIdentity}</li>
+    <li><span class="fw-bold">Age :</span> ${data.members[i].age}</li>
     <li class="fw-bold">Superpowers</li>
-    <ul>
-        <li>power</li>
+    <ul class="superpowers-${i}">
     </ul>
 </ul>
 </div>`
 
+for (let pwrs = 0; pwrs < data.members[i].powers.length; pwrs++) {
+    document.querySelector(`.superpowers-${i}`).innerHTML +=
+    `<li>${data.members[i].powers[pwrs]}</li>`
+    // console.log(data.members[i].powers[pwrs])
 }
+}
+
