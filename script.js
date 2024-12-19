@@ -57,7 +57,7 @@ for (let i = 0; i < data.members.length; i++) {
 
 document.querySelector('.cardsection').innerHTML +=
 `<div class="card p-4 col-lg-3 col-10 m-4 shadow ">
-<p class="text-center fw-bold typo">${data.members[i].name}</p>
+<p class="text-center fw-bold typo fs-2" style="font-family: 'Faster one';">${data.members[i].name}</p>
 <ul>
     <li><span class="fw-bold">Secret identity :</span> ${data.members[i].secretIdentity}</li>
     <li><span class="fw-bold">Age :</span> ${data.members[i].age}</li>
